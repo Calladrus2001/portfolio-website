@@ -4,7 +4,7 @@ import IconButton from "./IconButton";
 
 function Footer() {
   return (
-    <div className="w-full flex mt-8 mb-4 lg:mt-0 justify-center space-x-5 text-lg">
+    <div className="w-full flex mt-8 mb-10 lg:mb-4 lg:mt-0 justify-center space-x-6 text-xl lg:text-lg">
       <IconButton
         url="https://www.linkedin.com/in/vishesh-dugar-8464341b7/"
         Icon={FaLinkedin}
