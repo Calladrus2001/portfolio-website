@@ -1,4 +1,3 @@
-import React from 'react'
 import Home from './screens/Home';
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiLeetcode, SiDevpost } from "react-icons/si";
