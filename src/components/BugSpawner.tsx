@@ -45,6 +45,7 @@ export default function BugSpawner() {
   const health = useSelector((state: RootState) => state.game.health);
   const healthRef = useRef(health);
   const spawnBugRef = useRef<() => void>(() => {});
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   // Keep healthRef updated with latest health
   useEffect(() => {
@@ -113,23 +114,47 @@ export default function BugSpawner() {
 
   return (
     <>
+      {isGameStarted && isMobile && (
+        <div
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 999, // less than bug zIndex
+            background: "transparent",
+            pointerEvents: "auto",
+            touchAction: "none", // disables scrolling/touch
+          }}
+        />
+      )}
       {bugList.map((bug) => (
         <div
           key={bug.key}
-          onClick={() => handleBugClick(bug.key)}
-          className="p-1"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleBugClick(bug.key);
+          }}
           style={{
             position: "fixed",
             left: bug.x,
             top: bug.y,
-            zIndex: 1000,
+            zIndex: 1001, // above overlay
             cursor: "pointer",
             pointerEvents: "auto",
             transition: "transform 1.5s linear",
             transform: bug.transform,
           }}
         >
-          <img src="/bug.png" alt="bug" className="pointer-none" draggable={false} />
+          <img
+            src="/bug.png"
+            alt="bug"
+            style={{
+              width: "100%",
+              height: "100%",
+              pointerEvents: "none",
+              userSelect: "none",
+            }}
+            draggable={false}
+          />
         </div>
       ))}
     </>
