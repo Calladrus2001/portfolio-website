@@ -2,6 +2,7 @@ import { FaHeart, FaHeartCrack } from "react-icons/fa6";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../redux/store";
 import { MAX_LIVES, setGameStarted } from "../redux/gameSlice";
+import { IoGameController } from "react-icons/io5";
 import clsx from "clsx";
 
 function StatsTracker() {
@@ -37,7 +38,11 @@ function StatsTracker() {
           </p>
         </>
       ) : (
-        <div className="m-auto font-semibold text-stone-800">Start Game</div>
+        <div className="m-auto flex gap-2 items-center justify-between font-semibold text-stone-800">
+          <IoGameController />
+          <p>viz_dugs</p>
+          <IoGameController />
+        </div>
       )}
     </div>
   );
