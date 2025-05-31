@@ -17,7 +17,7 @@ function Intro() {
       <div className="lg:max-w-1/2 flex flex-col space-y-4">
         <h4 className="font-semibold text-yellow-400">Hello 👋</h4>
         <h2 className="text-lg font-semibold tracking-wider">I'm Vishesh Dugar</h2>
-        <p className="text-sm">
+        <p className="text-sm max-w-96">
           I'm a full-stack developer with a passion for building scalable, user-focused
           web applications. From crafting polished frontends to architecting efficient
           backends, I enjoy working across the stack to bring ideas to life. I focus on
@@ -25,7 +25,7 @@ function Intro() {
           build.
         </p>
         <button
-          className="p-2 w-40 text-black font-semibold bg-yellow-100 cursor-pointer hover:bg-yellow-200"
+          className="p-2 w-40 text-stone-800 font-semibold bg-yellow-100 cursor-pointer hover:bg-yellow-200"
           onClick={downloadResumeHandler}
         >
           Download Resume

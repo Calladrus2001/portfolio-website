@@ -1,11 +1,16 @@
+import BugSpawner from "./components/BugSpawner";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
+import StatsTracker from "./components/StatsTracker";
 
 function Layout() {
   return (
-    <div className="min-h-screen w-full p-2 flex flex-col justify-between gap-4 bg-stone-800 text-stone-200">
+    <div className="min-h-screen w-full p-2 flex flex-col justify-between gap-4 bg-stone-800 text-stone-200 select-none">
       <div className="w-full flex">
-        <p className="mx-auto font-semibold">viz_dugs</p>
+        <BugSpawner />
+        <div className="mx-auto">
+          <StatsTracker />
+        </div>
       </div>
       <Intro />
       <Footer />
