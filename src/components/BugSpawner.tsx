@@ -129,7 +129,7 @@ export default function BugSpawner() {
       {bugList.map((bug) => (
         <div
           key={bug.key}
-          className="p-1"
+          className="p-2 lg:p-1"
           onClick={(e) => {
             e.stopPropagation();
             handleBugClick(bug.key);

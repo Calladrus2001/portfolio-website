@@ -1,4 +1,6 @@
+
 @import "tailwindcss";
+@import "./spin-slow.css";
 
 html,
 body {

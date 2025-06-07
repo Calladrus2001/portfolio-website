@@ -27,7 +27,7 @@ function StatsTracker() {
         <>
           <div className="flex gap-1 items-center">
             {Array.from({ length: currentLives }).map((_, i) => (
-              <FaHeart key={"heart-" + i} />
+              <FaHeart key={"heart-" + i} className="text-red-600" />
             ))}
             {Array.from({ length: maxLives - currentLives }).map((_, i) => (
               <FaHeartCrack key={"crack-" + i} />
@@ -39,9 +39,9 @@ function StatsTracker() {
         </>
       ) : (
         <div className="m-auto flex gap-2 items-center justify-between font-semibold text-stone-800">
-          <IoGameController />
+          <IoGameController className="animate-spin-slow -scale-x-100" />
           <p>viz_dugs</p>
-          <IoGameController />
+          <IoGameController className="animate-spin-slow" />
         </div>
       )}
     </div>
