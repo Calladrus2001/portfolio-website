@@ -1,6 +1,5 @@
-
 @import "tailwindcss";
-@import "./spin-slow.css";
+@import "./animations/spin-slow.css";
 
 html,
 body {

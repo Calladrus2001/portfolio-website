@@ -1,4 +1,4 @@
-import GridItem from "./GridItem";
+import GridItem from "../components/GridItem";
 import { LuFolderGit2 } from "react-icons/lu";
 import { BsMedium } from "react-icons/bs";
 import { FaChessKing } from "react-icons/fa";

@@ -1,7 +1,8 @@
 import BugSpawner from "./components/BugSpawner";
 import Footer from "./components/Footer";
-import Intro from "./components/Intro";
+import Intro from "./screens/Intro";
 import StatsTracker from "./components/StatsTracker";
+import Modal from "./components/Modal";
 
 function Layout() {
   return (
@@ -13,6 +14,7 @@ function Layout() {
         </div>
       </div>
       <Intro />
+      <Modal />
       <Footer />
     </div>
   );

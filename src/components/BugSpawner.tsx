@@ -1,7 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../redux/store";
-import { increasePoints, loseLife, resetGame, setGameStarted } from "../redux/gameSlice";
+import {
+  increasePoints,
+  loseLife,
+  resetGame,
+  toggleGameStarted,
+} from "../redux/gameSlice";
+import { openModal } from "../redux/modalSlice";
 
 function getRandomPosition() {
   const vw = window.innerWidth;
@@ -41,8 +47,7 @@ export default function BugSpawner() {
   const [bugList, setBugList] = useState<
     Array<{ x: number; y: number; key: number; transform: string; timeoutId: number }>
   >([]);
-  const isGameStarted = useSelector((state: RootState) => state.game.isGameStarted);
-  const health = useSelector((state: RootState) => state.game.health);
+  const { isGameStarted, health } = useSelector((state: RootState) => state.game);
   const healthRef = useRef(health);
   const spawnBugRef = useRef<() => void>(() => {});
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
@@ -62,9 +67,15 @@ export default function BugSpawner() {
         setBugList((bugs) => bugs.filter((bug) => bug.key !== key));
         const remainingLives = healthRef.current;
         if (remainingLives <= 1) {
-          dispatch(loseLife());
+          dispatch(
+            openModal({
+              header: "Game Over!",
+              content: `You ran out of lives. Try again to beat your score!`,
+              isDismissible: true,
+            })
+          );
           dispatch(resetGame());
-          dispatch(setGameStarted());
+          dispatch(toggleGameStarted());
         } else {
           dispatch(loseLife());
         }
@@ -106,6 +117,10 @@ export default function BugSpawner() {
       if (bug) clearTimeout(bug.timeoutId);
       return bugs.filter((b) => b.key !== bugKey);
     });
+    // Haptic feedback (vibration) for supported devices
+    if (typeof window !== "undefined" && "vibrate" in window.navigator) {
+      window.navigator.vibrate(30);
+    }
     dispatch(increasePoints());
     setTimeout(() => {
       if (isGameStarted && spawnBugRef.current) spawnBugRef.current();
@@ -149,10 +164,13 @@ export default function BugSpawner() {
             src="/bug.png"
             alt="bug"
             style={{
+              minWidth: "51px",
+              minHeight: "36px",
               width: "100%",
               height: "100%",
               pointerEvents: "none",
               userSelect: "none",
+              display: "block",
             }}
             draggable={false}
           />

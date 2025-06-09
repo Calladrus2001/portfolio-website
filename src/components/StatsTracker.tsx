@@ -1,7 +1,7 @@
 import { FaHeart, FaHeartCrack } from "react-icons/fa6";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../redux/store";
-import { MAX_LIVES, setGameStarted } from "../redux/gameSlice";
+import { MAX_LIVES, toggleGameStarted } from "../redux/gameSlice";
 import { IoGameController } from "react-icons/io5";
 import clsx from "clsx";
 
@@ -19,7 +19,7 @@ function StatsTracker() {
       )}
       onClick={() => {
         if (!isGameStarted) {
-          dispatch(setGameStarted());
+          dispatch(toggleGameStarted());
         }
       }}
     >

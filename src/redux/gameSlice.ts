@@ -35,12 +35,13 @@ const gameSlice = createSlice({
         setToLocalStorage("health", state.health);
       }
     },
-    setGameStarted(state) {
+    toggleGameStarted(state) {
       state.isGameStarted = !state.isGameStarted;
     },
   },
 });
 
-export const { increasePoints, resetGame, loseLife, setGameStarted } = gameSlice.actions;
+export const { increasePoints, resetGame, loseLife, toggleGameStarted } =
+  gameSlice.actions;
 export default gameSlice.reducer;
 export { MAX_LIVES };
