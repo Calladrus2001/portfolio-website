@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "description": "Developed a POC for a RAG application using OpenAI and ChromaDB",
+    "links": [
+      {
+        "linkedin": "https://www.linkedin.com/posts/vishesh-dugar-8464341b7_openai-chromadb-rag-activity-7352933142162280450-dOjG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADJucrYB6HLMN9OuBZVKxSiJcL-GjPwG-aQ",
+        "Hashnode": "https://vishesh-dugar.hashnode.dev/how-to-build-rag-from-scratch-embeddings-vector-storage-and-openai-integration",
+        "github": "https://github.com/Calladrus2001/RAG-poc"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "description": "Wrote a post about a System Design Interview ... LLM Style",
+    "links": [
+      {
+        "linkedin": "https://www.linkedin.com/posts/vishesh-dugar-8464341b7_systemdesign-techinterview-techstory-activity-7351124940714102785-_ZIu?utm_source=share&utm_medium=member_desktop&rcm=ACoAADJucrYB6HLMN9OuBZVKxSiJcL-GjPwG-aQ"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "description": "Wrote a post about how special characters can screw up your product",
+    "links": [
+      {
+        "linkedin": "https://www.linkedin.com/posts/vishesh-dugar-8464341b7_webdevelopment-security-inputvalidation-activity-7350395882086821890-rsAN?utm_source=share&utm_medium=member_desktop&rcm=ACoAADJucrYB6HLMN9OuBZVKxSiJcL-GjPwG-aQ"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "description": "Wrote about a deep dive experience in DynamoDB Internals",
+    "links": [
+      {
+        "linkedin": "https://www.linkedin.com/posts/vishesh-dugar-8464341b7_ion-dynamodb-aws-activity-7347859677189181440-te_u?utm_source=share&utm_medium=member_desktop&rcm=ACoAADJucrYB6HLMN9OuBZVKxSiJcL-GjPwG-aQ",
+        "Hashnode": "https://vishesh-dugar.hashnode.dev/dynamodb-internals-1-how-does-it-store-data"
+      }
+    ]
+  }
+]

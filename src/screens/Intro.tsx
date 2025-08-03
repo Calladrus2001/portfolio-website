@@ -1,4 +1,6 @@
-import GridItem from "../components/GridItem";
+import GridItem from "../components/Intro/GridItem";
+import ActivityCard from "../components/Intro/ActivityCard";
+import activityData from "../data/activity.json";
 import { LuFolderGit2 } from "react-icons/lu";
 import { BsMedium } from "react-icons/bs";
 import { FaChessKing } from "react-icons/fa";
@@ -14,7 +16,7 @@ const downloadResumeHandler = () => {
 function Intro() {
   return (
     <div className="my-auto px-16 w-full flex flex-col lg:flex-row gap-16 justify-between align-middle">
-      <div className="lg:max-w-1/2 flex flex-col space-y-4">
+      <div className="lg:max-w-70 flex flex-col space-y-4">
         <h4 className="font-semibold text-yellow-400">Hello 👋</h4>
         <h2 className="text-lg font-semibold tracking-wider">I'm Vishesh Dugar</h2>
         <p className="text-sm max-w-96">
@@ -31,7 +33,15 @@ function Intro() {
           Download Resume
         </button>
       </div>
-      <div className="max-w-70 mx-auto grid grid-rows-2 grid-flow-col space-x-4 space-y-4 lg:space-x-6 lg:space-y-6 lg:mx-0">
+      <div className="flex flex-col min-w-80 lg:mx-w-1/3 space-y-4">
+        <h2 className="text-xl font-semibold">Recent Activity</h2>
+        <div className="flex flex-col gap-3">
+          {activityData.map((activity) => (
+            <ActivityCard key={activity.id} data={activity} />
+          ))}
+        </div>
+      </div>
+      <div className="max-h-70 max-w-70 mx-auto grid grid-rows-2 grid-flow-col space-x-4 space-y-4 lg:space-x-6 lg:space-y-6 lg:mx-0">
         <GridItem
           IconProp={LuFolderGit2}
           text="My Projects"

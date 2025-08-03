@@ -1,5 +1,5 @@
 import type { IconType } from "react-icons";
-import openUrlInNewTab from "../utils/openUrlInNewTab";
+import openUrlInNewTab from "../../utils/openUrlInNewTab";
 
 type GridItemProps = {
   IconProp: IconType;

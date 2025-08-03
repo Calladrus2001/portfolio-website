@@ -50,7 +50,6 @@ export default function BugSpawner() {
   const { isGameStarted, health } = useSelector((state: RootState) => state.game);
   const healthRef = useRef(health);
   const spawnBugRef = useRef<() => void>(() => {});
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   // Keep healthRef updated with latest health
   useEffect(() => {
@@ -129,7 +128,7 @@ export default function BugSpawner() {
 
   return (
     <>
-      {isGameStarted && isMobile && (
+      {isGameStarted && (
         <div
           style={{
             position: "fixed",
