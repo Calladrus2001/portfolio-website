@@ -1,5 +1,15 @@
 [
   {
+    "id": 5,
+    "description": "Built an event-driven, serverless RAG pipeline using AWS Lambda, S3, and Weaviate for semantic document querying",
+    "links": [
+      {
+        "Hashnode": "http://vishesh-dugar.hashnode.dev/dev-diaries-1-how-to-take-rag-and-aws-too-far",
+        "github": "https://github.com/Calladrus2001/paralegal"
+      }
+    ]
+  },
+  {
     "id": 1,
     "description": "Developed a POC for a RAG application using OpenAI and ChromaDB",
     "links": [
