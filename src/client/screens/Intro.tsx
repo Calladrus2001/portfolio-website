@@ -5,17 +5,9 @@ import { LuFolderGit2 } from "react-icons/lu";
 import { BsMedium } from "react-icons/bs";
 import { FaChessKing } from "react-icons/fa";
 import { TiContacts } from "react-icons/ti";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { downloadResume } from "../redux/resumeSlice";
+
 
 function Intro() {
-  const dispatch = useAppDispatch();
-  const { isDownloading } = useAppSelector((state) => state.resume);
-
-  const downloadResumeHandler = () => {
-    dispatch(downloadResume());
-  };
-
   return (
     <div className="my-auto px-16 w-full flex flex-col lg:flex-row gap-16 justify-between align-middle">
       <div className="lg:max-w-70 flex flex-col space-y-4">
@@ -28,13 +20,13 @@ function Intro() {
           clean code, seamless user experiences, and thoughtful design in everything I
           build.
         </p>
-        <button
-          className="p-2 w-40 text-on-surface-inverse font-semibold bg-accent cursor-pointer hover:bg-accent-hover disabled:opacity-50"
-          onClick={downloadResumeHandler}
-          disabled={isDownloading}
+        <a
+          href="/Vishesh_Resume.docx"
+          download="Vishesh_Resume.docx"
+          className="p-2 w-40 text-on-surface-inverse font-semibold bg-accent cursor-pointer hover:bg-accent-hover text-center inline-block"
         >
-          {isDownloading ? "Preparing..." : "Download Resume"}
-        </button>
+          Download Resume
+        </a>
       </div>
       <div className="flex flex-col min-w-80 lg:mx-w-1/3 space-y-4">
         <h2 className="text-xl font-semibold">Recent Activity</h2>
