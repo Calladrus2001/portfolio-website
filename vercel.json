@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/api/get-resume-url",
-      "destination": "/src/server/functions/get-resume-url.ts"
-    }
-  ]
-}
