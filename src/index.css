@@ -1,8 +1,0 @@
-@import "tailwindcss";
-@import "./animations/spin-slow.css";
-
-html,
-body {
-  overflow-x: hidden;
-  overscroll-behavior: none;
-}

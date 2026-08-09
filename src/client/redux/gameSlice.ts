@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getFromLocalStorage, setToLocalStorage } from "../utils/localStorageUtil";
+import { getFromLocalStorage, setToLocalStorage } from "../../utils/localStorageUtil";
 
 const MAX_LIVES = 3;
 

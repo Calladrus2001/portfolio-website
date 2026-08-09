@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@import "./animations/spin-slow.css";
+
+@theme {
+  --color-surface: var(--color-stone-800);
+  --color-surface-elevated: var(--color-white);
+  --color-on-surface: var(--color-stone-200);
+  --color-on-surface-muted: var(--color-stone-400);
+  --color-on-surface-inverse: var(--color-stone-800);
+  --color-on-surface-inverse-muted: var(--color-stone-900);
+  --color-accent: var(--color-yellow-100);
+  --color-accent-hover: var(--color-yellow-200);
+  --color-accent-strong: var(--color-yellow-400);
+  --color-danger: var(--color-red-600);
+  --color-border-default: var(--color-stone-600);
+  --color-border-accent: var(--color-yellow-200);
+}
+
+html,
+body {
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}

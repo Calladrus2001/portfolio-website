@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../redux/store";
 import { MAX_LIVES, toggleGameStarted } from "../redux/gameSlice";
 import { IoGameController } from "react-icons/io5";
-import clsx from "clsx";
+import { cn } from "../../utils/cn";
 
 function StatsTracker() {
   const dispatch = useDispatch();
@@ -13,9 +13,9 @@ function StatsTracker() {
   const maxLives = MAX_LIVES;
   return (
     <div
-      className={clsx(
-        "relative min-w-36 h-10 px-4 py-2 -mt-2 flex gap-4 justify-between items-center rounded-b-lg bg-yellow-100 text-stone-800",
-        { "cursor-pointer": !isGameStarted }
+      className={cn(
+        "relative min-w-36 h-10 px-4 py-2 -mt-2 flex gap-4 justify-between items-center rounded-b-lg bg-accent text-on-surface-inverse",
+        { "cursor-pointer": !isGameStarted },
       )}
       onClick={() => {
         if (!isGameStarted) {
@@ -27,7 +27,7 @@ function StatsTracker() {
         <>
           <div className="flex gap-1 items-center">
             {Array.from({ length: currentLives }).map((_, i) => (
-              <FaHeart key={"heart-" + i} className="text-red-600" />
+              <FaHeart key={"heart-" + i} className="text-danger" />
             ))}
             {Array.from({ length: maxLives - currentLives }).map((_, i) => (
               <FaHeartCrack key={"crack-" + i} />
@@ -38,7 +38,7 @@ function StatsTracker() {
           </p>
         </>
       ) : (
-        <div className="m-auto flex gap-2 items-center justify-between font-semibold text-stone-800">
+        <div className="m-auto flex gap-2 items-center justify-between font-semibold text-on-surface-inverse">
           <IoGameController className="animate-spin-slow -scale-x-100" />
           <p>viz_dugs</p>
           <IoGameController className="animate-spin-slow" />

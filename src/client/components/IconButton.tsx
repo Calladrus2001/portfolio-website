@@ -1,6 +1,7 @@
 import React from "react";
 import { type IconType } from "react-icons";
-import openUrlInNewTab from "../utils/openUrlInNewTab";
+import openUrlInNewTab from "../../utils/openUrlInNewTab";
+import { cn } from "../../utils/cn";
 
 interface IconButtonProps {
   url: string;
@@ -17,7 +18,10 @@ const IconButton: React.FC<IconButtonProps> = ({ url, Icon, className }) => {
   return (
     <button
       type="button"
-      className={`${className} cursor-pointer text-stone-200 hover:text-yellow-200`}
+      className={cn(
+        "cursor-pointer text-on-surface hover:text-accent-hover",
+        className
+      )}
       onClick={handleClick}
       tabIndex={0}
       aria-label="Open link"

@@ -1,23 +1,25 @@
 import GridItem from "../components/Intro/GridItem";
 import ActivityCard from "../components/Intro/ActivityCard";
-import activityData from "../data/activity.json";
+import activityData from "../../data/activity.json";
 import { LuFolderGit2 } from "react-icons/lu";
 import { BsMedium } from "react-icons/bs";
 import { FaChessKing } from "react-icons/fa";
 import { TiContacts } from "react-icons/ti";
-
-const downloadResumeHandler = () => {
-  const link = document.createElement("a");
-  link.href = "/Vishesh-resume.pdf";
-  link.download = "Vishesh-resume.pdf";
-  link.click();
-};
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { downloadResume } from "../redux/resumeSlice";
 
 function Intro() {
+  const dispatch = useAppDispatch();
+  const { isDownloading } = useAppSelector((state) => state.resume);
+
+  const downloadResumeHandler = () => {
+    dispatch(downloadResume());
+  };
+
   return (
     <div className="my-auto px-16 w-full flex flex-col lg:flex-row gap-16 justify-between align-middle">
       <div className="lg:max-w-70 flex flex-col space-y-4">
-        <h4 className="font-semibold text-yellow-400">Hello 👋</h4>
+        <h4 className="font-semibold text-accent-strong">Hello 👋</h4>
         <h2 className="text-lg font-semibold tracking-wider">I'm Vishesh Dugar</h2>
         <p className="text-sm max-w-96">
           I'm a full-stack developer with a passion for building scalable, user-focused
@@ -27,10 +29,11 @@ function Intro() {
           build.
         </p>
         <button
-          className="p-2 w-40 text-stone-800 font-semibold bg-yellow-100 cursor-pointer hover:bg-yellow-200"
+          className="p-2 w-40 text-on-surface-inverse font-semibold bg-accent cursor-pointer hover:bg-accent-hover disabled:opacity-50"
           onClick={downloadResumeHandler}
+          disabled={isDownloading}
         >
-          Download Resume
+          {isDownloading ? "Preparing..." : "Download Resume"}
         </button>
       </div>
       <div className="flex flex-col min-w-80 lg:mx-w-1/3 space-y-4">
