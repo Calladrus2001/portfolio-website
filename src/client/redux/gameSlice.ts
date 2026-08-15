@@ -5,13 +5,15 @@ const MAX_LIVES = 3;
 
 interface GameState {
   points: number;
+  highScore: number;
   health: number;
   isGameStarted: boolean;
 }
 
 const initialState: GameState = {
-  points: getFromLocalStorage("points", 0),
-  health: getFromLocalStorage("health", MAX_LIVES),
+  points: 0,
+  highScore: getFromLocalStorage("highScore", 0),
+  health: MAX_LIVES,
   isGameStarted: false,
 };
 
@@ -21,18 +23,22 @@ const gameSlice = createSlice({
   reducers: {
     increasePoints(state) {
       state.points += 10;
-      setToLocalStorage("points", state.points);
+      if (state.points > state.highScore) {
+        state.highScore = state.points;
+        setToLocalStorage("highScore", state.highScore);
+      }
     },
     resetGame(state) {
+      if (state.points > state.highScore) {
+        state.highScore = state.points;
+        setToLocalStorage("highScore", state.highScore);
+      }
       state.points = 0;
       state.health = MAX_LIVES;
-      setToLocalStorage("points", state.points);
-      setToLocalStorage("health", state.health);
     },
     loseLife(state) {
       if (state.health > 0) {
         state.health -= 1;
-        setToLocalStorage("health", state.health);
       }
     },
     toggleGameStarted(state) {

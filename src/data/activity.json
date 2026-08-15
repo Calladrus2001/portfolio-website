@@ -1,6 +1,6 @@
 [
   {
-    "id": 5,
+    "id": 1,
     "description": "Built an event-driven, serverless RAG pipeline using AWS Lambda, S3, and Weaviate for semantic document querying",
     "links": [
       {
@@ -10,7 +10,7 @@
     ]
   },
   {
-    "id": 1,
+    "id": 2,
     "description": "Developed a POC for a RAG application using OpenAI and ChromaDB",
     "links": [
       {
@@ -21,25 +21,7 @@
     ]
   },
   {
-    "id": 2,
-    "description": "Wrote a post about a System Design Interview ... LLM Style",
-    "links": [
-      {
-        "linkedin": "https://www.linkedin.com/posts/vishesh-dugar-8464341b7_systemdesign-techinterview-techstory-activity-7351124940714102785-_ZIu?utm_source=share&utm_medium=member_desktop&rcm=ACoAADJucrYB6HLMN9OuBZVKxSiJcL-GjPwG-aQ"
-      }
-    ]
-  },
-  {
     "id": 3,
-    "description": "Wrote a post about how special characters can screw up your product",
-    "links": [
-      {
-        "linkedin": "https://www.linkedin.com/posts/vishesh-dugar-8464341b7_webdevelopment-security-inputvalidation-activity-7350395882086821890-rsAN?utm_source=share&utm_medium=member_desktop&rcm=ACoAADJucrYB6HLMN9OuBZVKxSiJcL-GjPwG-aQ"
-      }
-    ]
-  },
-  {
-    "id": 4,
     "description": "Wrote about a deep dive experience in DynamoDB Internals",
     "links": [
       {
