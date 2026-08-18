@@ -15,13 +15,19 @@ import {
   LuCloud,
   LuTrophy,
   LuBraces,
-  LuShieldCheck,
-  LuZap,
+  LuBrain,
 } from "react-icons/lu";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { Button } from "../components/ui/Button";
 import { Badge } from "../components/ui/Badge";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "../components/ui/Card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "../components/ui/Card";
 
 export default function BentoGridSection() {
   const dispatch = useDispatch();
@@ -31,33 +37,72 @@ export default function BentoGridSection() {
   const skillCategories = [
     {
       title: "Languages",
+      subtitle: "Type-safe backends & systems scripting",
       icon: LuBraces,
-      skills: ["TypeScript", "JavaScript", "Go", "SQL", "Bash"],
+      skills: ["TypeScript", "JavaScript", "Python", "SQL", "Bash", "C++"],
     },
     {
-      title: "Backend & APIs",
-      icon: LuCpu,
-      skills: ["Node.js", "Express.js", "React", "Langchain.js", "RESTful API Design"],
-    },
-    {
-      title: "Cloud & DevOps",
+      title: "Cloud & DevOps (AWS)",
+      subtitle: "Serverless pipelines & infrastructure as code",
       icon: LuCloud,
-      skills: ["AWS ECS", "API Gateway", "Cognito", "Bedrock", "Docker", "Terraform", "Kubernetes", "CI/CD", "GitHub Actions"],
+      skills: [
+        "Lambda",
+        "ECS",
+        "Terraform",
+        "Docker",
+        "API Gateway",
+        "Cognito",
+        "Kinesis Firehose",
+        "S3",
+        "SQS",
+        "AWS Glue",
+        "AWS Athena",
+        "GitHub Actions",
+        "Localstack",
+        "Datadog",
+      ],
     },
     {
-      title: "Databases & Infra",
+      title: "Databases, Caches & Search",
+      subtitle: "Distributed storage, vector engines & telemetry",
       icon: LuDatabase,
-      skills: ["PostgreSQL", "DynamoDB", "Redis", "Weaviate", "MongoDB", "Aurora", "Datadog", "Localstack"],
+      skills: [
+        "Weaviate",
+        "Redis",
+        "PostgreSQL & RDS",
+        "DynamoDB",
+        "AWS Aurora",
+        "MongoDB",
+      ],
     },
     {
-      title: "Systems & Architecture",
-      icon: LuZap,
-      skills: ["Distributed Systems", "Event-Driven Architecture", "Microservices", "Message Queuing", "RBAC", "Rate Limiting", "Caching Strategies", "High Availability"],
+      title: "AI, LLM & Agentic Systems",
+      subtitle: "Context-aware intelligence & tool calling",
+      icon: LuBrain,
+      skills: [
+        "RAG",
+        "Vector Search & Embeddings",
+        "MCP (Model Context Protocol)",
+        "Bedrock AgentCore",
+        "Langchain",
+        "Harness",
+        "Context Engineering",
+        "Prompt Engineering",
+      ],
     },
     {
-      title: "AI & Agentic Systems",
-      icon: LuShieldCheck,
-      skills: ["RAG Pipelines", "Vector Search", "Agentic Workflows", "Prompt Engineering", "OpenAI", "Weaviate"],
+      title: "Frameworks & Full Stack",
+      subtitle: "Component architecture & performant APIs",
+      icon: LuCpu,
+      skills: [
+        "React",
+        "Express.js",
+        "FastAPI",
+        "Redux",
+        "FastMCP",
+        "Tailwind CSS",
+        "Three.js",
+      ],
     },
   ];
 
@@ -69,7 +114,9 @@ export default function BentoGridSection() {
             <span className="p-1.5 rounded-lg bg-amber-500/10 text-amber-400">
               <LuBookOpen className="w-5 h-5" />
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">Recent Activity</h2>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+              Recent Activity
+            </h2>
           </div>
           <p className="text-sm text-slate-400">
             Articles, open source contributions, and recent technical updates.
@@ -79,22 +126,29 @@ export default function BentoGridSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {(activityData as ActivityData[]).map((activity) => {
             return (
-              <Card key={activity.id} className="flex flex-col justify-between space-y-4 group">
+              <Card
+                key={activity.id}
+                className="flex flex-col justify-between space-y-4 group"
+              >
                 <CardContent className="space-y-4 p-0">
                   <div className="flex items-center justify-end gap-2">
                     {activity.links.map((linkObj) =>
                       Object.entries(linkObj).map(([platform, url]) => {
                         let Icon = LuGlobe;
-                        let colorClass = "text-amber-400 hover:text-amber-300 hover:border-amber-400/50";
+                        let colorClass =
+                          "text-amber-400 hover:text-amber-300 hover:border-amber-400/50";
                         if (platform === "github") {
                           Icon = FaGithub;
-                          colorClass = "text-slate-300 hover:text-white hover:border-white/30";
+                          colorClass =
+                            "text-slate-300 hover:text-white hover:border-white/30";
                         } else if (platform === "linkedin") {
                           Icon = FaLinkedin;
-                          colorClass = "text-sky-400 hover:text-sky-300 hover:border-sky-400/50";
+                          colorClass =
+                            "text-sky-400 hover:text-sky-300 hover:border-sky-400/50";
                         } else if (platform === "Hashnode") {
                           Icon = LuGlobe;
-                          colorClass = "text-amber-400 hover:text-amber-300 hover:border-amber-400/50";
+                          colorClass =
+                            "text-amber-400 hover:text-amber-300 hover:border-amber-400/50";
                         }
 
                         return (
@@ -110,7 +164,7 @@ export default function BentoGridSection() {
                             <Icon className="w-4 h-4" />
                           </a>
                         );
-                      })
+                      }),
                     )}
                   </div>
 
@@ -130,7 +184,9 @@ export default function BentoGridSection() {
             <span className="p-1.5 rounded-lg bg-amber-500/10 text-amber-400">
               <LuFolderGit2 className="w-5 h-5" />
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">Featured Projects</h2>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+              Featured Projects
+            </h2>
           </div>
           <p className="text-sm text-slate-400">
             Key engineering projects, AI RAG systems, and dev tools.
@@ -144,17 +200,35 @@ export default function BentoGridSection() {
                 <Badge variant="amber">
                   <LuSparkles className="w-3.5 h-3.5" /> Production-Grade RAG System
                 </Badge>
-                <span className="text-xs font-mono text-slate-400">Node.js · AWS · Weaviate</span>
+                <span className="text-xs font-mono text-slate-400">
+                  Node.js · AWS · Weaviate
+                </span>
               </div>
               <CardTitle className="text-2xl font-bold">
                 Paralegal — Legal Document Intelligence
               </CardTitle>
               <CardDescription className="text-slate-300 text-sm leading-relaxed">
-                Production-grade RAG system enabling legal professionals to query large document sets in natural language. Features a serverless ingestion pipeline (S3 → SQS → Lambda), a self-healing chunk-level feedback engine across 10 scoring categories, and full environment parity between AWS and local dev via Terraform + Localstack.
+                Production-grade RAG system enabling legal professionals to query large
+                document sets in natural language. Features a serverless ingestion
+                pipeline (S3 → SQS → Lambda), a self-healing chunk-level feedback engine
+                across 10 scoring categories, and full environment parity between AWS and
+                local dev via Terraform + Localstack.
               </CardDescription>
 
               <div className="flex flex-wrap gap-2 pt-2">
-                {["Node.js", "AWS Lambda", "SQS", "S3", "Weaviate", "OpenAI", "Terraform", "Localstack", "Langchain.js"].map((tag) => (
+                {[
+                  "Node.js",
+                  "AWS Lambda",
+                  "SQS",
+                  "S3",
+                  "Weaviate",
+                  "OpenAI",
+                  "Terraform",
+                  "Localstack",
+                  "Langchain.js",
+                  "Docker",
+                  "Bash",
+                ].map((tag) => (
                   <Badge key={tag} variant="slate">
                     {tag}
                   </Badge>
@@ -163,7 +237,11 @@ export default function BentoGridSection() {
             </CardHeader>
 
             <CardFooter className="mt-2 pt-6">
-              <a href="https://github.com/Calladrus2001/paralegal" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/Calladrus2001/paralegal"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button variant="amber" size="md">
                   <FaGithub className="w-4 h-4" /> View on GitHub
                 </Button>
@@ -180,7 +258,10 @@ export default function BentoGridSection() {
             </CardFooter>
           </Card>
 
-          <Card hoverEffect={false} className="p-6 border-amber-500/30 bg-slate-950/80 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+          <Card
+            hoverEffect={false}
+            className="p-6 border-amber-500/30 bg-slate-950/80 shadow-2xl flex flex-col justify-between relative overflow-hidden"
+          >
             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
 
             <div className="space-y-4 relative z-10">
@@ -198,17 +279,24 @@ export default function BentoGridSection() {
               </div>
 
               <p className="text-slate-300 text-xs leading-relaxed">
-                Test your reaction speed! Bugs spawn across your screen. Click them fast to squash them before they drain your health.
+                Test your reaction speed! Bugs spawn across your screen. Click them fast
+                to squash them before they drain your health.
               </p>
 
               <div className="bg-slate-900/90 rounded-xl p-4 border border-amber-500/20 space-y-2.5 font-mono">
                 <div className="flex items-center justify-between text-xs">
                   <span className="text-slate-400">All-Time High Score:</span>
-                  <span className="font-extrabold text-amber-400 text-base">{highScore} PTS</span>
+                  <span className="font-extrabold text-amber-400 text-base">
+                    {highScore} PTS
+                  </span>
                 </div>
                 <div className="flex items-center justify-between text-xs pt-2 border-t border-white/5">
-                  <span className="text-slate-400 font-sans text-[11px]">System Status:</span>
-                  <span className="text-emerald-400 text-[11px] font-mono font-semibold">READY TO PLAY</span>
+                  <span className="text-slate-400 font-sans text-[11px]">
+                    System Status:
+                  </span>
+                  <span className="text-emerald-400 text-[11px] font-mono font-semibold">
+                    READY TO PLAY
+                  </span>
                 </div>
               </div>
             </div>
@@ -238,31 +326,52 @@ export default function BentoGridSection() {
             <span className="p-1.5 rounded-lg bg-amber-500/10 text-amber-400">
               <LuCpu className="w-5 h-5" />
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">Skills & Technical Stack</h2>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+              Technical Arsenal & Architecture
+            </h2>
           </div>
           <p className="text-sm text-slate-400">
-            Languages, frameworks, cloud infrastructure, and AI tooling.
+            Comprehensive skill set spanning distributed systems, cloud infrastructure, AI
+            pipelines, and database optimization.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((cat) => {
             const Icon = cat.icon;
             return (
-              <Card key={cat.title} className="p-6 space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                    <Icon className="w-5 h-5" />
+              <Card
+                key={cat.title}
+                className="p-6 space-y-4 flex flex-col justify-between group"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all duration-300">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-white text-base tracking-tight">
+                          {cat.title}
+                        </h3>
+                        <p className="text-[11px] text-slate-400 font-normal">
+                          {cat.subtitle}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="font-bold text-white text-base">{cat.title}</h3>
-                </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {cat.skills.map((skill) => (
-                    <Badge key={skill} variant="slate" className="hover:border-amber-500/40 hover:text-amber-300 transition-colors">
-                      {skill}
-                    </Badge>
-                  ))}
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {cat.skills.map((skillName) => (
+                      <Badge
+                        key={skillName}
+                        variant="slate"
+                        className="transition-transform hover:scale-105 duration-150"
+                      >
+                        {skillName}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </Card>
             );

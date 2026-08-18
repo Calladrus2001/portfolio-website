@@ -13,13 +13,13 @@ export default function Navbar() {
   return (
     <header className="sticky top-4 z-50 w-full max-w-7xl mx-auto px-4 sm:px-6">
       <div className="glass-card rounded-2xl px-5 py-3.5 flex items-center justify-between shadow-2xl border border-white/10">
-        <a href="#" className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50 rounded-xl">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 to-yellow-300 flex items-center justify-center text-slate-950 font-extrabold shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+        <div className="flex items-center gap-3 select-none">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 to-yellow-300 flex items-center justify-center text-slate-950 font-extrabold shadow-lg shadow-amber-500/20">
             <LuTerminal className="w-5 h-5" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-extrabold text-base tracking-wide text-white group-hover:text-amber-400 transition-colors font-sans">
+              <span className="font-extrabold text-base tracking-wide text-white font-sans">
                 VISHESH DUGAR
               </span>
               <Badge variant="emerald" ping>
@@ -30,7 +30,7 @@ export default function Navbar() {
               FULL STACK & SYSTEM ARCHITECT
             </p>
           </div>
-        </a>
+        </div>
 
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
           <a href="#about" className="hover:text-amber-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-amber-400 rounded-md px-1">

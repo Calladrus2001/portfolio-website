@@ -1,4 +1,12 @@
-import { LuDownload, LuArrowDownRight, LuSparkles, LuBrain, LuServer, LuCode, LuAward } from "react-icons/lu";
+import {
+  LuDownload,
+  LuArrowDownRight,
+  LuSparkles,
+  LuBrain,
+  LuServer,
+  LuCode,
+  LuAward,
+} from "react-icons/lu";
 import { Button } from "../components/ui/Button";
 import { Badge } from "../components/ui/Badge";
 import { Card } from "../components/ui/Card";
@@ -14,13 +22,16 @@ export default function HeroSection() {
           <div className="flex-1 space-y-6 text-left">
             <div className="flex flex-wrap items-center gap-2">
               <Badge variant="amber">
-                <LuSparkles className="w-3.5 h-3.5 text-amber-400" /> Software Engineer @ ION Trading
+                <LuSparkles className="w-3.5 h-3.5 text-amber-400" /> Software Engineer @
+                ION Group
               </Badge>
               <Badge variant="slate">
-                <LuBrain className="w-3.5 h-3.5 text-amber-400" /> Distributed Systems & RAG
+                <LuBrain className="w-3.5 h-3.5 text-amber-400" /> Distributed Systems &
+                RAG
               </Badge>
               <Badge variant="slate">
-                <LuServer className="w-3.5 h-3.5 text-amber-400" /> AWS & Event-Driven Architecture
+                <LuServer className="w-3.5 h-3.5 text-amber-400" /> AWS & Event-Driven
+                Architecture
               </Badge>
             </div>
 
@@ -29,12 +40,18 @@ export default function HeroSection() {
                 Hello World, I'm Vishesh Dugar 👋
               </h4>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight font-sans">
-                Building <span className="text-gradient-amber">Production Systems</span> That Scale.
+                Building <span className="text-gradient-amber">Production Systems</span>{" "}
+                That Scale.
               </h1>
             </div>
 
             <p className="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed font-normal">
-              Software Engineer at ION Trading with a track record of high-impact, production-grade work — from scaling Redis clusters to save $64.5K/yr and migrating monolithic platforms to AWS with zero downtime, to shipping a serverless RAG pipeline, a full RBAC system covering 80K+ users, and winning 5 hackathons. I build systems that are fast, fault-tolerant, and built to last.
+              Software Engineer at ION Group with a track record of high-impact,
+              production-grade work — from scaling Redis clusters to save $64.5K/yr and
+              migrating monolithic platforms to AWS with zero downtime, to shipping a
+              serverless RAG pipeline, a full RBAC system covering 80K+ users, and winning
+              5 hackathons. I build systems that are fast, fault-tolerant, and built to
+              last.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -55,7 +72,9 @@ export default function HeroSection() {
             <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-xl">
               <div>
                 <p className="text-2xl font-extrabold text-amber-400 font-mono">$64.5K</p>
-                <p className="text-xs text-slate-400 font-sans">Annual infra savings (Redis)</p>
+                <p className="text-xs text-slate-400 font-sans">
+                  Annual infra savings (Redis)
+                </p>
               </div>
               <div>
                 <p className="text-2xl font-extrabold text-white font-mono">80K+</p>
@@ -69,7 +88,10 @@ export default function HeroSection() {
           </div>
 
           <div className="w-full lg:w-96 flex-shrink-0">
-            <Card hoverEffect={false} className="p-6 border-amber-500/20 bg-slate-950/70 shadow-2xl">
+            <Card
+              hoverEffect={false}
+              className="p-6 border-amber-500/20 bg-slate-950/70 shadow-2xl"
+            >
               <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
                 <div className="flex items-center gap-2">
                   <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block" />
@@ -93,25 +115,28 @@ export default function HeroSection() {
                   role: <span className="text-emerald-400">"Software Engineer"</span>,
                 </p>
                 <p className="pl-4">
-                  company: <span className="text-emerald-400">"ION Trading"</span>,
+                  company: <span className="text-emerald-400">"ION Group"</span>,
                 </p>
                 <p className="pl-4">stack: [</p>
                 <p className="pl-8 text-yellow-300">"TypeScript", "Node.js",</p>
-                <p className="pl-8 text-yellow-300">"AWS", "Go", "React"</p>
+                <p className="pl-8 text-yellow-300">"AWS", "Python", "React"</p>
                 <p className="pl-4">],</p>
                 <p className="pl-4">certs: [</p>
                 <p className="pl-8 text-sky-300">"AWS Solutions Architect",</p>
                 <p className="pl-8 text-sky-300">"AWS Cloud Practitioner"</p>
                 <p className="pl-4">],</p>
                 <p className="pl-4">
-                  status: <span className="text-emerald-400">"Open to Opportunities"</span>
+                  status:{" "}
+                  <span className="text-emerald-400">"Open to Opportunities"</span>
                 </p>
                 <p>&#125;;</p>
               </div>
 
               <div className="mt-4 pt-4 border-t border-white/10 flex items-center gap-2">
                 <LuAward className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
-                <p className="text-[11px] font-mono text-slate-400">2× AWS Certified · Valid through May 2027</p>
+                <p className="text-[11px] font-mono text-slate-400">
+                  2× AWS Certified · Valid through May 2027
+                </p>
               </div>
             </Card>
           </div>
