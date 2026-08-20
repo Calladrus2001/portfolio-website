@@ -236,7 +236,16 @@ export default function BentoGridSection() {
               </div>
             </CardHeader>
 
-            <CardFooter className="mt-2 pt-6">
+            <CardFooter className="mt-2 pt-6 flex-wrap gap-3">
+              <a
+                href="https://paralegal.vishesh-dugar.me/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button variant="primary" size="md">
+                  <LuExternalLink className="w-4 h-4" /> Live Demo
+                </Button>
+              </a>
               <a
                 href="https://github.com/Calladrus2001/paralegal"
                 target="_blank"
