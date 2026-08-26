@@ -1,0 +1,40 @@
+name: Auto-generate PDF Resume
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'public/Vishesh_Resume.docx'
+
+permissions:
+  contents: write
+
+jobs:
+  convert_to_pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Fonts
+        run: |
+          mkdir -p ~/.local/share/fonts
+          cp -r .github/fonts/* ~/.local/share/fonts/ 2>/dev/null || true
+          fc-cache -f -v
+
+      - name: Install LibreOffice
+        run: sudo apt-get update && sudo apt-get install -y libreoffice
+
+      - name: Convert DOCX to PDF
+        run: |
+          cd public
+          libreoffice --headless --convert-to pdf Vishesh_Resume.docx
+
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: auto-generate PDF resume from DOCX"
+          file_pattern: 'public/Vishesh_Resume.pdf'

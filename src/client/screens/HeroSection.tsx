@@ -55,7 +55,10 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <a href="/Vishesh_Resume.docx" download="Vishesh_Resume.docx">
+              <a 
+                href={__HAS_RESUME_PDF__ ? "/Vishesh_Resume.pdf" : "/Vishesh_Resume.docx"} 
+                download={__HAS_RESUME_PDF__ ? "Vishesh_Resume.pdf" : "Vishesh_Resume.docx"}
+              >
                 <Button variant="primary" size="lg">
                   <LuDownload className="w-4 h-4 stroke-[2.5]" />
                   Download Resume

@@ -65,7 +65,10 @@ export default function Navbar() {
             </span>
           </Button>
 
-          <a href="/Vishesh_Resume.docx" download="Vishesh_Resume.docx">
+          <a 
+            href={__HAS_RESUME_PDF__ ? "/Vishesh_Resume.pdf" : "/Vishesh_Resume.docx"} 
+            download={__HAS_RESUME_PDF__ ? "Vishesh_Resume.pdf" : "Vishesh_Resume.docx"}
+          >
             <Button variant="primary" size="sm">
               <LuFileText className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">Resume</span>
