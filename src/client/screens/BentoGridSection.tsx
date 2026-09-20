@@ -256,7 +256,7 @@ export default function BentoGridSection() {
                 </Button>
               </a>
               <a
-                href="http://vishesh-dugar.hashnode.dev/dev-diaries-1-how-to-take-rag-and-aws-too-far"
+                href="https://vishesh-dugar.hashnode.dev/dev-diaries-1-how-to-take-rag-and-aws-too-far"
                 target="_blank"
                 rel="noreferrer"
               >

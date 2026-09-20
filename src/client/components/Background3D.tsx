@@ -20,13 +20,26 @@ import {
   Clock,
 } from "three";
 
+function isWebGLAvailable(): boolean {
+  try {
+    const canvas = document.createElement("canvas");
+    return Boolean(
+      window.WebGLRenderingContext &&
+      (canvas.getContext("webgl2") ||
+        canvas.getContext("webgl") ||
+        canvas.getContext("experimental-webgl")),
+    );
+  } catch {
+    return false;
+  }
+}
+
 export default function Background3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-    setIsLoaded(true);
+    if (!containerRef.current || !isWebGLAvailable()) return;
 
     const scene = new Scene();
     scene.fog = new FogExp2(0x0b0d13, 0.0018);
@@ -35,7 +48,7 @@ export default function Background3D() {
       60,
       window.innerWidth / window.innerHeight,
       1,
-      1000
+      1000,
     );
     camera.position.z = 400;
 
@@ -43,6 +56,7 @@ export default function Background3D() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
     containerRef.current.appendChild(renderer.domElement);
+    setIsLoaded(true);
 
     const particleCount = 1200;
     const geometry = new BufferGeometry();
@@ -76,10 +90,7 @@ export default function Background3D() {
       scales[i] = Math.random() * 3 + 1;
     }
 
-    geometry.setAttribute(
-      "position",
-      new BufferAttribute(positions, 3)
-    );
+    geometry.setAttribute("position", new BufferAttribute(positions, 3));
     geometry.setAttribute("color", new BufferAttribute(colors, 3));
 
     const canvas = document.createElement("canvas");

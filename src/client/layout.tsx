@@ -5,15 +5,18 @@ import HeroSection from "./screens/HeroSection";
 import BentoGridSection from "./screens/BentoGridSection";
 import Footer from "./components/Footer";
 import Modal from "./components/Modal";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 const Background3D = lazy(() => import("./components/Background3D"));
 
 function Layout() {
   return (
     <div className="relative min-h-screen w-full bg-[#0b0d13] text-slate-100 font-sans selection:bg-amber-500/30 selection:text-amber-200 overflow-x-hidden">
-      <Suspense fallback={null}>
-        <Background3D />
-      </Suspense>
+      <ErrorBoundary fallback={null}>
+        <Suspense fallback={null}>
+          <Background3D />
+        </Suspense>
+      </ErrorBoundary>
 
       <BugSpawner />
 
